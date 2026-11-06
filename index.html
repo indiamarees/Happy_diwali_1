@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Diwali Team Wishes</title>
+<style>
+body{margin:0;font-family:Arial,sans-serif;background:linear-gradient(135deg,#140028,#32004d,#000);color:#fff;text-align:center;overflow:hidden}
+canvas{position:fixed;inset:0;z-index:-1}
+.container{padding:40px 20px;max-width:900px;margin:auto}
+h1{font-size:3rem;color:#ffd700;text-shadow:0 0 20px orange}
+.card{background:rgba(255,255,255,.1);padding:25px;border-radius:20px;backdrop-filter:blur(10px)}
+select,button{padding:14px;border-radius:12px;border:none;margin:10px;width:min(500px,90%)}
+button{background:#ff9800;color:white;font-weight:bold;cursor:pointer}
+#wish{display:none;margin-top:20px;background:rgba(255,215,0,.12);padding:20px;border-radius:15px}
+</style>
+</head>
+<body>
+<canvas id="fw"></canvas>
+<div class="container">
+<h1>✨ Happy Diwali Team ✨</h1>
+<p><b>Marish wishes to you and your family</b> 🪔</p>
+<div class="card">
+<select id="name">
+<option value=''>Select Your Name</option>
+<option>JAYA</option><option>SUBHA</option><option>MOHANA SUNDARAM</option><option>Suganthi</option><option>MOHAMED ASLAM KHAN</option><option>KAVYA</option><option>MARIYAMMAL</option><option>RINSHAD</option><option>SUMATHI</option><option>HARIHARAN</option><option>RAMAR</option><option>ARUN</option><option>SANGEETHA</option><option>NAGARAJ</option><option>PRIYADHARSHINI</option><option>NIVETHA</option><option>FAISEL</option><option>BHAVANI</option><option>NOOTHANA</option><option>NITHISH KUMAR</option><option>NANTHAKUMAR</option><option>VIGNESH</option><option>AJEETHKUMAR</option><option>NIVETHITHA</option><option>AJITHKUMAR</option>
+</select><br>
+<button onclick="wish()">🎁 Get Your Wishes</button>
+<div id="wish"></div>
+</div></div>
+<script>
+function wish(){const n=document.getElementById('name').value;if(!n){alert('Select your name');return;}document.getElementById('wish').style.display='block';document.getElementById('wish').innerHTML=`<h2>Happy Diwali ${n} 🎆</h2><p>May this Diwali bring happiness, prosperity, success and good health to you and your loved ones.</p><p><b>Marish wishes to you and your family</b> ❤️</p>`;}
+const c=document.getElementById('fw'),x=c.getContext('2d');function r(){c.width=innerWidth;c.height=innerHeight}r();onresize=r;let p=[];setInterval(()=>{for(let i=0;i<70;i++)p.push({x:Math.random()*c.width,y:Math.random()*c.height/2,vx:(Math.random()-.5)*8,vy:(Math.random()-.5)*8,l:80,col:`hsl(${Math.random()*360},100%,60%)`})},700);(function a(){x.fillStyle='rgba(0,0,0,.2)';x.fillRect(0,0,c.width,c.height);p.forEach((o,i)=>{x.fillStyle=o.col;x.beginPath();x.arc(o.x,o.y,3,0,7);x.fill();o.x+=o.vx;o.y+=o.vy;if(--o.l<1)p.splice(i,1)});requestAnimationFrame(a)})();
+</script>
+</body></html>
